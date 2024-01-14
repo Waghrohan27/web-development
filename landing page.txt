@@ -1,0 +1,118 @@
+<html code>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>online store</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+      </head>
+      <body>
+        <section>
+          <div class="container">
+           
+              <div class="searchbar">
+                <input type="text" placeholder="search">
+             </div>
+             <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul></h1>
+            </nav>
+            <div class="article">
+                <h1>Stylish Shoes For You!</h1>
+                
+                <p>We ar making design for Everyone<br>
+                Make Your Life, Show your moment and Take your pictures. </p>
+                <a href="" class="btn">Buy Now</a>
+            </div>
+        </section>
+      </body>
+
+
+<css code>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+  *{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+  }
+  section{
+    min-height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)), url(img.jpg);
+    background-repeat: no-repeat;
+    background-size:cover ;
+  }
+  .container{
+    font-size: 20px;
+  }
+  nav{
+    height: 80px;
+  }
+  nav ul{
+    float: right;
+    line-height: 80px;
+  }
+  nav ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 0px 5px;
+  }
+  nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    text-transform:capitalize ;
+    border-radius: 2px;
+    padding: 5px 5px;
+  }
+  nav ul li a:hover{
+    background-color: gold;
+    transition: 0.5s ease;
+  }
+  .searchbar{
+   width: 100%;
+    margin: auto;
+    text-align: center;
+    transform: translateY(30vh);
+    
+  }
+  .article{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    transform: translateY(25vh);
+  }
+  .article h1{
+    font-size: 40px;
+    color:white;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    margin-bottom: 25px;
+  }
+  .article p{
+    font-size: 18px;
+    color: rgb(244, 234, 234);
+    line-height: 1.5;
+    margin-bottom: 50px;
+  }
+  .article .btn{
+    color: #fff;
+    padding: 12px 25px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: green;
+  }
+  .article .btn:hover{
+    background-color: rgb(51, 141, 105);
+    transition: 0.5s ease;
+  }
+
+
+  

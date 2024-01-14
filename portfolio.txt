@@ -1,0 +1,342 @@
+<html code>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8552f755e3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav> 
+            <div class="header-text">
+                <h1>Hi, I'm <br> <span> Rohan Wagh </span></h1>
+                <p>From Pune, Maharashtra.</p>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ----------about---------- -->    
+    <div id="about">
+        <div class="container">
+            <div class="row">
+               <div class="about-col-1">
+                 <img src="images/user.png">
+               </div> 
+               <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p><br>I'm Student at TSSM's Bhivrabai Sawant College Of Engineering 
+                     and Research. Pursuing Third Year in Electronics and 
+                     Telecommunication Engineering. <br>Adaptable and flexible team player 
+                     with strong time management and organisational skills. Ready to apply classroom 
+                     knowledge into practical experience and support team.
+                      Quick learner prepared to develop industry knowledge and delve into challenging projects.</p>
+
+                     <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                     </div>
+                     <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>Programme Development</span></li>
+                            <li><span>Communication Skills</span></li>
+                            <li><span>Time Management</span></li>
+                            <li><span>Public Relations</span></li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2025</span><br> Pursuing Third Year Electronics 
+                                and Telecommunication Engineering at TSSM BSCOER.</li>
+                            <li><span>2022</span><br>Diploma in Information Technology From MIT Polytechnic Pune.</li>
+                            <li><span>2019</span><br>Abhinav Vidyalaya High School.</li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li><span>Web Designer and Development</span><br>Completed internship for 6 weeks. 
+                                According to the regulations of internships for education of Computer / IT students at
+                                Manosa Technologies Pvt. Ltd. Pune. </li>
+                        </ul>
+                     </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--------contact-------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact </h1>
+                <p><i class="fas fa-paper-plane"></i>waghrohan27@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i>7517572429</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/rohan-wagh-25a3152a8"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Sakshigjadhav"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/therohanwagh?igsh=enBsZWw1MzA3bW5s"><i class="fab fa-instagram"></i></a>
+                </div>
+                <br><br><a href="image/cv.pdf" download class="btn"><i class="fa fa-download"></i> Download CV</a>
+            </div>
+            <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+     
+     function opentab(tabname) {
+         for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+         }
+         for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+         }
+         event.currentTarget.classList.add("active-link");
+         document.getElementById(tabname).classList.add("active-tab");
+       }
+</script>
+<script>
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+    form.addEventListener('submit' , e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
+
+
+<css code>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #080808;
+    color: #fff;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background.jpg); 
+    background-size: cover;
+    background-position: center;
+}
+.container{
+ padding: 5px 5% ;
+}
+.logo{
+    width: 150px;
+    height: auto;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    flex-wrap: wrap;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0 ;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px; 
+}
+.header-text h1 span{
+    color: royalblue;
+}
+.header-text p{
+    font-size: 25px;
+}
+/*----------about---------- */ 
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+    
+}
+.about-col-2{
+    flex-basis: 60% ;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+    color: rgb(241, 73, 26);
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #4434f5;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: burlywood;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* ------contact------- */
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: rgb(39, 227, 148);
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: rgb(26, 61, 232);
+    transform: translateY(-5px);
+}
+.btn {
+    background-color: rgb(3, 99, 3);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+.btn:hover {
+    background-color: rgb(21, 66, 21);
+  }
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0 ;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn{
+    padding: 14px 60px;
+    font-size: 18px ;
+    margin-top: 20px;
+    cursor: pointer;
+}
